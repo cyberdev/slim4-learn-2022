@@ -47,3 +47,7 @@ $app->get('/', function (Request $request, Response $response, $args) {
 
 $app->run();
 ```
+**Run with PHP's built-in webserver**
+```batch
+php -S localhost:8080 -t public public/index.php
+```
