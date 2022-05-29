@@ -31,4 +31,11 @@ $app->get('/', function (Request $request, Response $response, $args) {
 	return $response;
 });
 
+$app->get('/json', function (Request $request, Response $response, array $args) {
+	$payload = json_encode(['hello' => 'world'], JSON_PRETTY_PRINT);
+	$response->getBody()->write($payload);
+
+	return $response->withHeader('Content-Type', 'application/json')->withStatus(401);
+});
+
 $app->run();
